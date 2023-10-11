@@ -28,12 +28,14 @@
 				console.log(document.querySelector("#kor").value); //입력된 글자
 				console.log(document.querySelector("#eng").value); //입력된 글자
 				var name = document.querySelector("#name").value;
+				//var name = document.querySelector("#name")<위치지정>.value<값>;  ->id가 name인 위치에 입력된 값을 변수name에 입력
 				var kor = document.querySelector("#kor").value;
 				var eng = document.querySelector("#eng").value;
 				var total = Number(kor)+Number(eng);
 				var avg = total/2;
 				
 				document.querySelector("#t01").innerText = name;
+				//document.querySelector("#t01")<위치지정>.innerText<text기입> = name<기입할내용>; ->id가 t01인 위치에 변수name에 입력된 내용을 기입
 				document.querySelector("#t02").innerText = kor;
 				document.querySelector("#t03").innerText = eng;
 				document.querySelector("#t04").innerText = total;
