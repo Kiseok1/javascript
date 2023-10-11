@@ -23,17 +23,21 @@
 		<script>
 			function writeBtn(){
 				alert("테스트");
-				console.log(today); //현재시간
+				
 				console.log(document.querySelector("#name").value); //입력된 글자
 				console.log(document.querySelector("#kor").value); //입력된 글자
 				console.log(document.querySelector("#eng").value); //입력된 글자
-				var name = document.querySelector("#name").value
-				var kor = document.querySelector("#name").value
-				var eng = document.querySelector("#name").value
+				var name = document.querySelector("#name").value;
+				var kor = document.querySelector("#kor").value;
+				var eng = document.querySelector("#eng").value;
+				var total = Number(kor)+Number(eng);
+				var avg = total/2;
 				
 				document.querySelector("#t01").innerText = name;
 				document.querySelector("#t02").innerText = kor;
-				document.querySelector("#t02").innerText = eng;
+				document.querySelector("#t03").innerText = eng;
+				document.querySelector("#t04").innerText = total;
+				document.querySelector("#t05").innerText = avg;
 			}
 		</script>
 		<section>
