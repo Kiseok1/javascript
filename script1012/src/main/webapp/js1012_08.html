@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>구구단</title>
+		<style>
+			*{margin:0; padding: 0;}
+			h1{text-align: center; margin:30px;}
+			table{width: 600px; margin:0 auto;}
+			table,th,td{border: 1px solid black; border-collapse: collapse;}
+			th,td{width: 100px; height: 40px; font-size: 20px; 
+			font-weight: 700; text-align: center;}
+			th{background: #efefef;}
+		</style>
+		<script>
+			/*
+			function btn(){
+				var data="";
+				var select = document.querySelector("#select").value;
+					data += "<tr>";
+					data += "<th colspan='5'>"+select+"단</th>";
+					data += "</tr>";
+				for(var i=1;i<=9;i++){
+					data += "<tr>";
+					data += "<td>"+select+"</td>";	
+					data += "<td>*</td>";	
+					data += "<td>"+i+"</td>";	
+					data += "<td>=</td>";	
+					data += "<td>"+(select*i)+"</td>";
+					data += "</tr>";	
+					
+					document.querySelector("#cont").innerHTML=data;	
+				}
+			}
+			*/
+			
+			function contBtn(){
+				var data="";
+				/*
+				for(var i=1;i<=9;i++){
+					data += "<tr>";
+					data += "<th colspan='5'>"+i+"단</th>";
+					data += "</tr>";
+					data += "<tr>";
+					data += "<td>2</td>";	
+					data += "<td>*</td>";	
+					data += "<td>"+i+"</td>";	
+					data += "<td>=</td>";	
+					data += "<td>"+(2*i)+"</td>";
+					data += "</tr>";	
+					
+					document.querySelector("#cont").innerHTML=data;	
+				}
+				*/
+				
+				for(var i=2;i<=9;i++){
+					
+					data += "<tr>";
+					data += "<th colspan='5'>"+i+"단</th>";
+					data += "</tr>";
+					for(var j=1;j<=9;j++){
+						data += "<tr>";
+						data += "<td>"+i+"</td>";	
+						data += "<td>*</td>";	
+						data += "<td>"+j+"</td>";	
+						data += "<td>=</td>";	
+						data += "<td>"+(i*j)+"</td>";
+						data += "</tr>"	
+						
+						document.querySelector("#cont").innerHTML=data;	
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" onclick="contBtn()">구구단 출력</button>
+		<br>
+		<!--
+		<select name="select" id="select" onchange="btn()">
+			<option value="2">2단</option>
+			<option value="3">3단</option>
+			<option value="4">4단</option>
+			<option value="5">5단</option>
+			<option value="6">6단</option>
+			<option value="7">7단</option>
+			<option value="8">8단</option>
+			<option value="9">9단</option>
+		</select>
+		-->
+		
+		<h1>구구단</h1>
+		<table id="cont">
+			<!-- 
+			
+			-->
+			
+		</table>
+		<script>
+			contBtn();
+		</script>
+		
+	</body>
+</html>
