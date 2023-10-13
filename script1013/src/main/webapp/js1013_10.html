@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			#txt{width: 600px; height: 100px; border: 1px solid black;
+			font-size: 20px; text-align: center;}
+		</style>
+		<script>
+			var stu_arr = [{"stuNo":1,"first_name":"Domini","email":"dyeoland0@canalblog.com","gender":"Female","ip_address":"106.159.230.127"},
+{"stuNo":2,"first_name":"Tynan","email":"tmassot1@google.de","gender":"Genderfluid","ip_address":"187.166.68.35"},
+{"stuNo":3,"first_name":"Goddard","email":"gantoniades2@icio.us","gender":"Male","ip_address":"132.20.169.30"},
+{"stuNo":4,"first_name":"Vaughn","email":"vlomen3@mlb.com","gender":"Male","ip_address":"40.209.228.18"},
+{"stuNo":5,"first_name":"Doretta","email":"dstickney4@techcrunch.com","gender":"Female","ip_address":"255.193.94.240"},
+{"stuNo":6,"first_name":"Cherry","email":"wlampe5@reuters.com","gender":"Male","ip_address":"237.12.235.24"},
+{"stuNo":7,"first_name":"Germaine","email":"gcuesta6@yolasite.com","gender":"Genderqueer","ip_address":"30.84.12.66"},
+{"stuNo":8,"first_name":"Lavinia","email":"lmcpeck7@seesaa.net","gender":"Female","ip_address":"70.129.149.171"},
+{"stuNo":9,"first_name":"Marlena","email":"mscudders8@weebly.com","gender":"Female","ip_address":"71.155.20.132"},
+{"stuNo":10,"first_name":"Marybelle","email":"mmurtagh9@uol.com.br","gender":"Female","ip_address":"140.103.139.16"}];
+			
+			function arr_print(){
+				console.log(stu_arr[0]);
+				$("#txt").text(stu_arr[0].first_name+","+stu_arr[0].email+","+stu_arr[0].gender+","+stu_arr[0].ip_address);
+			}
+			
+			function btn(){
+				//input박스의 이름을 가져옴.
+				var name = $("#name").val();
+				var sch_student = stu_arr.filter((stu)=>{
+					return stu.first_name==name;
+				});
+				
+				alert("검색되었습니다.");
+				console.log(sch_student);
+				$("#txt").text(sch_student);
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<h1>명단</h1>
+		<input type="button" onclick="arr_print()" value="불러오기">
+		<br>
+		<input type="text" name="name" id="name">
+		<input type="button" onclick="btn()" value="검색">
+		<br>
+		<div id="txt">
+			<!-- 1번 학생정보가 들어오. -->
+		</div>
+	
+	</body>
+</html>
