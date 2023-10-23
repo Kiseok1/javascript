@@ -6,6 +6,9 @@
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/notice.css">
+		<style>
+			img{width: 50px;}
+		</style>
 		<script>
 			$(function(){
 				var pageNo=$("#pageNo").val(); 
@@ -21,6 +24,7 @@
 						console.log(data);
 						var sData = $(data).find("item");
 						console.log(sData.length);
+						var hData = "";
 						for(var i=0;i<sData.length;i++){
 							var galContentId = $(sData[i]).find("galContentId").text();
 							var galTitle = $(sData[i]).find("galTitle").text();
@@ -32,7 +36,18 @@
 							console.log("3 : "+galWebImageUrl);
 							console.log("4 : "+galCreatedtime);
 							console.log("5 : "+galPhotographyLocation);
-						}
+							
+							hData += "<tr>";
+							hData += "<td>"+ galContentId +"</td>";
+							hData += "<td><a href='#'>"+galTitle+"</a></td>";
+							hData += "<td>"+ galCreatedtime+"</td>";
+							hData += "<td>"+ galPhotographyLocation +"</td>";
+							hData += "<td><img src='"+ galWebImageUrl+"'></td>";
+							hData += "</tr>";
+							
+						}//for
+						$("#cont").html(hData);
+						
 					},
 					error:function(){
 						alert("데이터 실패");
@@ -140,9 +155,9 @@
 							<tr>
 								<th>번호</th>
 								<th>제목</th>
-								<th>작성자</th>
-								<th>작성일</th>
-								<th>조회수</th>
+								<th>제작일</th>
+								<th>관광장소</th>
+								<th>이미지</th>
 							</tr>
 						</thead>
 						<tbody id="cont">
